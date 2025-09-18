@@ -127,6 +127,7 @@ export default function AuthPage({ onAuthSuccess }) {
       }
       setLoginErrors({});
       onAuthSuccess?.();
+      navigate('/dashboard');
       return;
     } catch (e) {
       setLoginErrors({ general: e.message ||'בינתיים אין התחברות אמיתית - זה רק לבדיקת העיצוב' });
@@ -192,6 +193,7 @@ export default function AuthPage({ onAuthSuccess }) {
       setSignupData({ username: '', email: '', password: '', confirmPassword: '' });
       setSignupOtp('');
       setActiveTab('login');
+      navigate('/dashboard');
       return;
     } catch (e) {
       setSignupOtpError(e.message || "הוקלד קוד לא נכון");
